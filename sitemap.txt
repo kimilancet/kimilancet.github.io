@@ -1,3 +1,3 @@
-https://github.com/kimilancet/2022/09/26/hello-world/
-https://github.com/kimilancet/tags/index.html
-https://github.com/kimilancet
+https://example.com/2022/09/26/hello-world/
+https://example.com/tags/index.html
+https://example.com/
