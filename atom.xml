@@ -6,7 +6,7 @@
   <link href="https://kimilancet.github.io/atom.xml" rel="self"/>
   
   <link href="https://kimilancet.github.io/"/>
-  <updated>2022-09-26T13:24:28.086Z</updated>
+  <updated>2022-09-27T13:43:49.407Z</updated>
   <id>https://kimilancet.github.io/</id>
   
   <author>
@@ -17,19 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2022-9-27，leetcode每日一题</title>
+    <link href="https://kimilancet.github.io/2022/09/27/leetcode_206/"/>
+    <id>https://kimilancet.github.io/2022/09/27/leetcode_206/</id>
+    <published>2022-09-27T13:39:55.313Z</published>
+    <updated>2022-09-27T13:43:49.407Z</updated>
+    
+    <content type="html"><![CDATA[<p>原题链接：<a href="https://leetcode.cn/problems/reverse-linked-list/">https://leetcode.cn/problems/reverse-linked-list/</a></p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给你单链表的头节点，反转链表，并返回反转后的链表。</p><h2 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h2><p>设原链表为</p><p>1-&gt;2-&gt;3-&gt;NULL（此时1为head）</p><p>则反转之后的链表为</p><p>3-&gt;2-&gt;1-&gt;NULL</p><p>换个方向看看</p><p>NULL&lt;-1&lt;-2&lt;-3（此时3为head）</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode* last=<span class="literal">nullptr</span>;<span class="comment">//last为双指针中的前一个指针</span></span><br><span class="line">        ListNode* curr=head;<span class="comment">//curr为双指针中的后一个指针</span></span><br><span class="line">        <span class="keyword">while</span>(curr!=<span class="literal">nullptr</span>)&#123;<span class="comment">//当curr指针到达链表的null的时候停止循环</span></span><br><span class="line">            ListNode* next=curr-&gt;next;<span class="comment">//设置curr指针的后移的结点</span></span><br><span class="line">            curr-&gt;next=last;<span class="comment">//双指针的关系为curr指向last</span></span><br><span class="line">            last=curr;<span class="comment">//先last指针后移，不然就不能一个一个结点后移</span></span><br><span class="line">            curr=next;<span class="comment">//curr指针再后移</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> last;<span class="comment">//退出循环，返回last，这时last为头结点，返回即为返回反转后的链表</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>当退出循环后，last指针指向了我们实际需要的头结点3，再指向2，1，NULL，返回头结点即返回了反转后的链表。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;原题链接：&lt;a href=&quot;https://leetcode.cn/problems/reverse-linked-list/&quot;&gt;https://leetcode.cn/problems/reverse-linked-list/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题目大意&quot;&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>开始</title>
     <link href="https://kimilancet.github.io/2022/09/26/hello-world/"/>
     <id>https://kimilancet.github.io/2022/09/26/hello-world/</id>
     <published>2022-09-26T07:24:56.989Z</published>
-    <updated>2022-09-26T13:24:28.086Z</updated>
+    <updated>2022-09-27T12:59:28.253Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://kimilancet.github.io/">my blog!</a>!</p><p>欢迎来到我的博客，今后我会在这里不定期更新内容，大致包括数学，算法，想法等内容。欢迎常来nia~</p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to my blog!</p><p>欢迎来到我的博客，今后我会在这里不定期更新内容，大致包括数学，算法，想法等。欢迎常来nia~</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://kimilancet.github.io/&quot;&gt;my blog!&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;欢迎来到我的博客，今后我会在这里不定期更新内容，大致包括数学，算法，想法等内容。欢迎常来nia~&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Welcome to my blog!&lt;/p&gt;
+&lt;p&gt;欢迎来到我的博客，今后我会在这里不定期更新内容，大致包括数学，算法，想法等。欢迎常来nia~&lt;/p&gt;
 </summary>
       
     
