@@ -6,7 +6,7 @@
   <link href="https://kimilancet.github.io/atom.xml" rel="self"/>
   
   <link href="https://kimilancet.github.io/"/>
-  <updated>2022-10-03T08:01:25.020Z</updated>
+  <updated>2022-10-03T08:07:21.243Z</updated>
   <id>https://kimilancet.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>2022-10-03-LeetCode_455</title>
     <link href="https://kimilancet.github.io/2022/10/03/leetcode_445/"/>
     <id>https://kimilancet.github.io/2022/10/03/leetcode_445/</id>
     <published>2022-10-03T07:32:40.636Z</published>
-    <updated>2022-10-03T08:01:25.020Z</updated>
+    <updated>2022-10-03T08:07:21.243Z</updated>
     
     <content type="html"><![CDATA[<p>原题链接：<a href="https://leetcode.cn/problems/assign-cookies/">https://leetcode.cn/problems/assign-cookies/</a></p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>数组g中有i个元素，每个元素的大小g[i]，数组s中有j个元素，每个元素的大小为s[j]，若s[j]&gt;&#x3D;g[i]，则满足数+1，求最大满足数。</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote><p>由于题目不需要考虑饼干是否存在浪费，故可以采用贪心的思路，从最小开始比较。</p></blockquote><h3 id="具体思路"><a href="#具体思路" class="headerlink" title="具体思路"></a>具体思路</h3><p>将数组g和数组s都从大到小排好序，都从最小开始，逐个比较。</p><p>若数组s的该元素小于数组g的该元素，则找数组s的下一个元素再比较，</p><p>若数组s的该元素大于等于数组g的该元素，则两数组索引都+1，以上述同样的方法比较接下来的元素大小，满足数+1，返回满足数。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findContentChildren</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;g, vector&lt;<span class="type">int</span>&gt; &amp;s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(g.<span class="built_in">begin</span>(), g.<span class="built_in">end</span>());                             <span class="comment">//数组g，s排序</span></span><br><span class="line">        <span class="built_in">sort</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> j = <span class="number">0</span>, cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;                  </span><br><span class="line">            <span class="keyword">if</span> (j &lt; g.<span class="built_in">size</span>() &amp;&amp; g[j] &lt;= s[i]) &#123;               <span class="comment">//这里其实cnt可以代替j工作</span></span><br><span class="line">                j++;                                          <span class="comment">//为了与思路对应就加了j变量</span></span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
     
